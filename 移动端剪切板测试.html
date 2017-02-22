@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="text">内容1111111111</div>
+    <button id="copy-btn">复制</button>
+    <script>
+        var textDom = document.querySelector('#text');
+        document.querySelector('#copy-btn').addEventListener('click',function(e){
+            var event = document.createEvent('ClipboardEvent');
+            event.initEvent('copy',true,false);
+
+            var se = window.getSelection();
+            se.removeAllRanges();
+            var range = document.createRange();
+            range.setStart(textDom,0);
+            range.setEnd(textDom,1);
+            se.addRange(range);
+            document.dispatchEvent(event);
+        });
+        document.addEventListener('copy',function(e){
+            console.log(e);
+            //alert(e.target.innerHTML);
+        });
+    </script>
+</body>
+</html>

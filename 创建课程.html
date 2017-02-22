@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>创建直播号</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <link href="Content/zepto.mdatetimer.css" rel="stylesheet" />
+    <style>
+
+
+        .class-create-page .form .form-item input { width: auto; }
+
+        .class-create-page.step1 .class-cover { width: 100%; padding-top: 56.25%; background: center no-repeat; background-size: contain; position: relative; }
+        .class-create-page.step1 .class-cover .setting-tips { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content:  center; align-items: center; background: rgba(0,0,0,0.5); color: #fff; }
+        .class-create-page.step1 .class-cover .setting-tips i { font-size: 3.2rem; }
+        .class-create-page.step1 .class-cover .setting-tips span { font-size: 1.2rem; }
+        .class-create-page.step1 .form label { width: 2.6rem; font-size: 1.6rem; color: #969696; }
+        .class-create-page.step1 .form .form-item { justify-content: flex-start; padding: 0 1.6rem; }
+        .class-create-page.step1 .form .select { width: 100%; }
+        .class-create-page.step1 .form .select:after { display: none; }
+
+
+        .class-create-page .tabs-classtype { display: flex; height: 11.3rem; background: #59b574; justify-content: space-around; align-items: center; }
+        .class-create-page .tabs-classtype .tab { width: auto; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #90d8a5;  }
+        .class-create-page .tabs-classtype .tab .icon { width: 6.6rem; height: 6.6rem; border-radius: 50%; border: 1px solid #90d8a5; display: flex; justify-content: center; align-items: center; }
+        .class-create-page .tabs-classtype .tab .icon:after { width: 3.5rem; height: 3.5rem; background: url(Content/images/icons-classtype.png) -4.6rem 0rem no-repeat; background-size: 8.5rem; content: ""; }
+        .class-create-page .tabs-classtype .tab .text { margin-top: 0.8rem; line-height: 1; }
+        .class-create-page .tabs-classtype .tab .icon-free:after { background-position-y: -0.3rem; }
+        .class-create-page .tabs-classtype .tab .icon-fee:after { background-position-y: -3.7rem; }
+        .class-create-page .tabs-classtype .tab .icon-lock:after { background-position-y: -7.3rem; }
+        .class-create-page .tabs-classtype .tab.active { color: #fff; }
+        .class-create-page .tabs-classtype .tab.active .icon { background: #fff; border-color: #fff; }
+        .class-create-page .tabs-classtype .tab.active .icon:after { background-position-x: -0.3rem; }
+        .class-create-page .sign-form .checkbox:not(.active) { color: #969696; }
+        .class-create-page .sign-form .checkbox:not(.active):before { color: #969696; }
+        .class-create-page .sign-form .checkbox.active { color: #59b574; }
+        .class-create-page .sign-form .form-item { align-items: stretch; line-height: 4.4rem; }
+        .class-create-page .sign-form .form-item.bd-none input { border-bottom: 1px solid #e6e6e6; }
+        .class-create-page .classtype-form { padding: 1.6rem 1.6rem; min-height: 4.4rem; display: flex; flex-direction: column; justify-content: center; align-items: stretch; }
+        .class-create-page .classtype-form .desc { font-size: 1.2rem; }
+        .class-create-page .classtype-form input { height: 4rem; border: none; border-bottom: 1px solid #59b574; }
+        .class-create-page .btn-prev { width: 50%; }
+
+        .class-create-page .sign-form:not(.active) .form-item:not(:first-child) { display: none; }
+        .class-create-page .sign-form:not(.active) :first-child { border-bottom: none; }
+
+        .class-create-page .sign-form .form-item { position: relative; }
+        .class-create-page .sign-form .form-item .btn-remove { font-size: 1.6rem; color: #969696; }
+        .class-create-page .sign-form .form-item .btn-remove:before { font-family: iconfont; content: "\e618"; }
+
+
+
+
+    </style>
+</head>
+<body class="">
+    <div class="page class-create-page step1" style="display: none;">
+        <div class="main">
+            <form class="createclass-form">
+                <section class="class-cover" data-filename="cover" style="background-image: url(Content/images/1.jpg);">
+                    <div class="setting-tips">
+                        <i class="iconfont icon-camera-fill"></i>
+                        <span>设置课程封面</span>
+                    </div>
+                </section>
+                <section class="form">
+                    <div class="form-item">
+                        <label class="iconfont icon-book-open"></label><input class="input-name" name="name" type="text" placeholder="请输入课程名称（仅限16字）" />
+                    </div>
+                    <div class="form-item">
+                        <label class="iconfont icon-clock"></label><input class="input-time" name="time" type="text" placeholder="请设置课程开始时间" readonly />
+                    </div>
+                    <div class="form-item">
+                        <label class="iconfont icon-hourglass"></label>
+                        <div class="select">
+                            <input name="duation" type="hidden" value="" />
+                            <span class="text placeholder">请选择课程时长</span>
+                            <select>
+                                <option>1小时</option>
+                                <option>1.5小时</option>
+                                <option>2小时</option>
+                                <option>2.5小时</option>
+                                <option>3小时</option>
+                                <option>4小时</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <footer class="footer bd-t">
+            <div class="btn btn-next">下一步</div>
+        </footer>
+    </div>
+
+    <div class="page class-create-page step2" style="display: none;">
+        <input class="input-type" type="hidden" name="classtype" value="" />
+        <div class="main">
+            <div class="tabs-classtype">
+                <div class="tab active" data-value="0">
+                    <i class="icon icon-free"></i>
+                    <span class="text">免费课程</span>
+                </div>
+                <div class="tab" data-value="1">
+                    <i class="icon icon-fee"></i>
+                    <span class="text">收费课程</span>
+                </div>
+                <div class="tab" data-value="2">
+                    <i class="icon icon-lock"></i>
+                    <span class="text">加密课程</span>
+                </div>
+            </div>
+            <div class="tabcontent-list">
+                <section class="tabcontent">
+                    <div class="classtype-form classtype-freeinfo-form">
+                        <div class="desc">学员无需交费即可进入课程</div>
+                    </div>
+                </section>
+                <section class="tabcontent">
+                    <div class="classtype-form classtype-chargeinfo-form">
+                        <div class="desc">学员需交费后进入课程</div>
+                        <input type="number" pattern="[\.0-9]*" placeholder="请设置收费金额" />
+                    </div>
+                </section>
+                <section class="tabcontent">
+                    <div class="classtype-form classtype-encryptedinfo-form">
+                        <div class="desc">学员需输入密码后进入课程</div>
+                        <input type="password" placeholder="请输入课程密码" />
+                    </div>
+                </section>
+            </div>
+            <section class="form pd-lr-m bd-t mg-t-s sign-form">
+                <div class="form-item">
+                    <label>学生报名时需填写信息</label>
+                    <div>
+                        <span class="switch switch-signform"><input type="hidden" value="false" /> </span>
+                    </div>
+                </div>
+                <div class="form-item bd-none">
+                    <input type="text" name="customKeyA" value="姓名" />
+                    <span class="checkbox active mg-l-s disabled" data-init-control="initCheckbox"><input type="hidden" value="" /></span>
+                </div>
+                <div class="form-item bd-none">
+                    <input type="text" name="customKeyB" value="电话" />
+                    <span class="checkbox active mg-l-s" data-init-control="initCheckbox"><input type="hidden" value="" /></span>
+                </div>
+                <!--<div class="form-item bd-none">-->
+                    <!--<input type="text" name="customKeyC" placeholder="报名的信息（例如QQ）" value="" />-->
+                    <!--<span class="btn-remove mg-l-s mg-r-s"></span>-->
+                    <!--&lt;!&ndash;<span class="checkbox active mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="form-item bd-none">-->
+                    <!--<input type="text" name="customKeyD" placeholder="报名的信息（例如职位）" value="" />-->
+                    <!--<span class="btn-remove mg-l-s mg-r-s"></span>-->
+                    <!--&lt;!&ndash;<span class="checkbox mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>&ndash;&gt;-->
+                <!--</div>-->
+                <div class="form-item bd-none pd-t-m">
+                    <button class="cbtn btn-main btn-normal-green btn-additem"><i class="iconfont icon-plus"></i> 新增信息项目</button>
+                </div>
+                <div class="form-item">
+                    <span class="radio" data-init-control="initCheckbox">开启审核<input type="hidden" value="" /></span>
+                </div>
+            </section>
+        </div>
+        <footer class="footer bd-t">
+            <div class="btn btn-normal btn-prev">上一步</div>
+            <div class="btn btn-create">创建</div>
+        </footer>
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/zepto.mdatetimer.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.imgreader.js"></script>
+
+    <script>
+
+        var initClassCreatePage = function() {
+            var $pages = $('.class-create-page');
+            var formData = null;
+            var showStep1 = function() {
+                var $step = null;
+                var init = function() {
+                    $step = $pages.filter('.step1');
+                    $step.find('.input-time').initMDateTimer();
+                    $step.find('.select').initSelect();
+                    $step.find('.class-cover').imgReader({
+                        success: function(imgUrl) {
+                            $(this).css('background-image', 'url(' + imgUrl + ')');
+                        }
+                    });
+                    $step.find('.btn-next').click(function() {
+                        showStep2();
+                    });
+
+                }
+                return function() {
+                    if(!$step) {
+                        init();
+                    }
+                    $pages.hide();
+                    $step.show();
+                }
+            }();
+
+            var showStep2 = function() {
+                var $step = null;
+                var init = function() {
+                    $step = $pages.filter('.step2');
+                    var $inputClassType = $step.find('.input-classtype');
+                    $step.find('.tabs-classtype').initTab({
+                        tabChange: function() {
+                            $inputClassType.val($(this).data('value'));
+                        }
+                    });
+                    var $signForm = $step.find('.sign-form');
+                    $step.find('.switch-signform').initSwitch({
+                        change: function(on) {
+                            if(on){
+                                $signForm.addClass('active');
+                            }
+                            else {
+                                $signForm.removeClass('active');
+                            }
+                        }
+                    });
+                    var initItemMgr = function() {
+                        var $btnAddItem = $signForm.find('.btn-additem');
+                        var count = 0;
+                        var contentArr = [
+                            {
+                                name:'customKeyC',
+                                tips:'报名的信息（例如QQ）'
+                            },
+                            {
+                                name:'customKeyD',
+                                tips:'报名的信息（例如职位）'
+                            }
+                        ];
+                        var template = '<div class="form-item bd-none">\
+                                <input type="text" name="{{name}}" placeholder="{{tips}}" value="" />\
+                                <span class="btn-remove mg-l-s mg-r-s"></span>\
+                        <!--<span class="checkbox mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>-->\
+                        </div>';
+
+                        var addItem = function() {
+                            var content = contentArr[count];
+                            html = template.replace('{{name}}', content.name).replace('{{tips}}', content.tips);
+                            var $item = $(html);
+                            $item.find('.btn-remove').click(function() {
+                                removeItem($item);
+                                $btnAddItem.parent('.form-item').show();
+                            });
+                            $btnAddItem.parent('.form-item').before($item);
+                            count++;
+                        };
+                        var removeItem = function($item) {
+                            $item.remove();
+                            count--;
+                        };
+
+                        $btnAddItem.click(function(){
+                            addItem();
+                            if(count>=2) {
+                                $(this).parent('.form-item').hide();
+                            }
+                        });
+
+
+
+                    }();
+
+                    $step.find('.btn-prev').click(function() {
+                        showStep1();
+                    });
+                    $step.find('.btn-create').click(function() {
+                        formData = new FormData(document.querySelector('.createclass-form'));
+                        if(formData) {
+                            $step.find('input[name]').each(function() {
+                                var $this = $(this);
+                                var key = $this.attr('name');
+                                var value = $this.val();
+                                formData.append(key,value);
+                            });
+                        }
+                        else {
+                            sTips.show('发生错误，请刷新后重试');
+                        }
+                    });
+
+                }
+                return function() {
+                    if(!$step) {
+                        init();
+                    }
+                    $pages.hide();
+                    $step.show();
+                }
+            }();
+            showStep1();
+        }
+        initClassCreatePage();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>我的账户</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .account-page {  }
+        .account-page .header-info-box { 
+            height: 16.8rem;
+            padding: 1.6rem;
+            background: #fd7900;
+            color: #fff;
+            text-align: center;
+        }
+        .account-page .bg-active { background: #fd7900; }
+        .account-page .header-info-box .top-bar {
+            font-size: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+        }
+        .account-page .header-info-box .top-bar .icon-rmb2 { font-size: 1.5rem; margin-right: 0.8rem; vertical-align: middle; }
+        .account-page .header-info-box .count-info { line-height: 1.2; }
+        .account-page .header-info-box .count-info .label { font-size: 1rem; color: #ffd5af; }
+        .account-page .header-info-box .class-income .count { font-size: 3rem; }
+        .account-page .header-info-box .history-income .count { font-size: 1.4rem; }
+
+        .account-page .flex-box { height: 6rem; padding: 0 1.6rem; display: flex; display: -webkit-flex; justify-content: space-between; align-items: center; }
+        .account-page .flex-box-s { height: 4rem; }
+        .account-page .part-list { line-height: 1.5; color: #444; }
+        .account-page .part-list .info { flex-grow: 1; }
+        .account-page .part-list .info .title {  }
+        .account-page .part-list .info .desc { font-size: 1.2rem; color: #999; }
+        .account-page .part-list .icon-coupon { margin-right: 0.6em; color: #239897; }
+        .account-page .part-list .btn { width: 5.0rem; height: 3.2rem; line-height: 3.2rem; text-align: center;  border-radius: 0.5rem; }
+
+    </style>
+</head>
+<body class="">
+    <div class="page account-page">
+        <div class="main">
+            <header class="header-info-box">
+                <div class="top-bar">
+                    <a class="link" href="#"><span class="iconfont icon-rmb2"></span>我的收益</a>
+                    <a class="link" href="#">明细</a>
+                </div>
+                <div class="count-info mg-t-m class-income">
+                    <div class="label">课程收益</div>
+                    <div class="count">800.00</div>
+                </div>
+                <div class="count-info mg-t-s history-income">
+                    <div class="label">历史总收益</div>
+                    <div class="count">1201.00</div>
+                </div>
+            </header>
+            <div class="part-list">
+                <section class="cash-info flex-box">
+                    <div class="info">
+                        <div class="title">可提现：<span class="amount">400.00元</span></div>
+                        <div class="desc">只能提取已结束课程的收益</div>
+                    </div>
+                    <div class="btn bg-active">提现</div>
+                </section>
+                <section class="coupon-info mg-t-s bd-t">
+                    <div class="flex-box flex-box-s bd-b f6">
+                        <div><span class="iconfont icon-coupon"></span>我的点券</div>
+                        <a class="" href="#">明细</a>
+                    </div>
+                    <div class="flex-box">
+                        <div class="info">
+                            <div class="title">余额：<span class="amount">400.00</span></div>
+                            <div class="desc">消耗点券才可以接受学员报名，1个学员消耗1点</div>
+                        </div>
+                        <div class="btn">充值</div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/dropload.js"></script>
+    <script>
+    </script>
+</body>
+</html>

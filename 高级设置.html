@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>高级设置</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <style>
+        .setting-list-page .link-box { height: 4.4rem; display: flex; justify-content: space-between; align-items: center; }
+        .setting-list-page .link-box .left-box { flex: 0 0 auto; }
+        .setting-list-page .link-box .right-box { margin-left: 1.6rem; color: #969696; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; position: relative; }
+
+
+        .set-signup-page .sign-form .checkbox:not(.active) { color: #969696; }
+        .set-signup-page .sign-form .checkbox:not(.active):before { color: #969696; }
+        .set-signup-page .sign-form .checkbox.active { color: #59b574; }
+        .set-signup-page .sign-form .form-item { align-items: stretch; line-height: 4.4rem; }
+        .set-signup-page .sign-form .form-item.bd-none input { border-bottom: 1px solid #e6e6e6; }
+        .set-signup-page .classtype-form { padding: 1.6rem 1.6rem; min-height: 4.4rem; display: flex; flex-direction: column; justify-content: center; align-items: stretch; }
+        .set-signup-page .classtype-form .desc { font-size: 1.2rem; }
+        .set-signup-page .classtype-form input { height: 4rem; border: none; border-bottom: 1px solid #59b574; }
+        .set-signup-page .btn-prev { width: 50%; }
+
+        .set-signup-page .sign-form:not(.active) .form-item:not(:first-child) { display: none; }
+        .set-signup-page .sign-form:not(.active) :first-child { border-bottom: none; }
+
+        .set-signup-page .sign-form .form-item { position: relative; }
+        .set-signup-page .sign-form .form-item .btn-remove { font-size: 1.6rem; color: #969696; }
+        .set-signup-page .sign-form .form-item .btn-remove:before { font-family: iconfont; content: "\e618"; }
+
+        .set-award-page .amount-set-box { flex-direction: column; align-items: stretch; }
+        .set-award-page .amount-set-box .amount-input-list { display: flex; flex-flow: row wrap; justify-content: space-between; }
+        .set-award-page .amount-set-box .amount-input-list .amount-input-item { margin-bottom: 5%; width: 30%; flex: 0 0 auto; position: relative; }
+        .set-award-page .amount-set-box .amount-input-list .amount-input-item:before { position: absolute; left: 0.5em; line-height: 2em; content: "¥"; color: #59b574; }
+        .set-award-page .amount-set-box .amount-input-list .input-amount { padding-left: 1.2em; height: 2em; border: 1px solid #e6e6e6; }
+
+        .set-award-page .award-set-form:not(.active) .form-item:not(:first-child) { display: none; }
+        .set-award-page .award-set-form:not(.active) :first-child { border-bottom: none; }
+
+    </style>
+</head>
+<body class="">
+    <div class="page setting-list-page" style="display: none;">
+        <div class="main">
+            <section class="pd-lr-m cbtn link-box">
+                <div class="left-box">
+                    报名、审核
+                </div>
+                <div class="right-box">
+                    <i class="iconfont icon-arrowright"></i>
+                </div>
+            </section>
+            <section class="pd-lr-m cbtn link-box">
+                <div class="left-box">
+                    打赏功能
+                </div>
+                <div class="right-box">
+                    <i class="iconfont icon-arrowright"></i>
+                </div>
+            </section>
+            <section class="pd-lr-m link-box">
+                <div class="left-box">
+                    学员区语音
+                </div>
+                <div class="right-box">
+                    <span class="switch" data-init-control="initSwitch"><input type="hidden" value="true" /></span>
+                </div>
+            </section>
+            <section class="pd-lr-m link-box">
+                <div class="left-box">
+                    学员区图片
+                </div>
+                <div class="right-box">
+                    <span class="switch" data-init-control="initSwitch"><input type="hidden" value="true" /></span>
+                </div>
+            </section>
+        </div>
+        <footer class="footer bd-t">
+            <div class="btn btn-normal">返回课程</div>
+        </footer>
+    </div>
+
+    <div class="page set-signup-page" style="display: none;">
+        <div class="main">
+            <section class="form pd-lr-m sign-form">
+                <div class="form-item">
+                    <label>学生报名时需填写信息</label>
+                    <div>
+                        <span class="switch switch-signform"><input type="hidden" value="false" /> </span>
+                    </div>
+                </div>
+                <div class="form-item bd-none">
+                    <input type="text" name="customKeyA" value="姓名" />
+                    <span class="checkbox active mg-l-s disabled" data-init-control="initCheckbox"><input type="hidden" value="" /></span>
+                </div>
+                <div class="form-item bd-none">
+                    <input type="text" name="customKeyB" value="电话" />
+                    <span class="checkbox active mg-l-s" data-init-control="initCheckbox"><input type="hidden" value="" /></span>
+                </div>
+                <!--<div class="form-item bd-none">-->
+                <!--<input type="text" name="customKeyC" placeholder="报名的信息（例如QQ）" value="" />-->
+                <!--<span class="btn-remove mg-l-s mg-r-s"></span>-->
+                <!--&lt;!&ndash;<span class="checkbox active mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="form-item bd-none">-->
+                <!--<input type="text" name="customKeyD" placeholder="报名的信息（例如职位）" value="" />-->
+                <!--<span class="btn-remove mg-l-s mg-r-s"></span>-->
+                <!--&lt;!&ndash;<span class="checkbox mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>&ndash;&gt;-->
+                <!--</div>-->
+                <div class="form-item bd-none pd-t-m">
+                    <button class="cbtn btn-main btn-normal-green btn-additem"><i class="iconfont icon-plus"></i> 新增信息项目</button>
+                </div>
+                <div class="form-item">
+                    <span class="radio" data-init-control="initCheckbox">开启审核<input type="hidden" value="" /></span>
+                </div>
+            </section>
+        </div>
+        <footer class="footer bd-t">
+            <div class="btn btn-normal btn-back">返回</div>
+            <div class="btn btn-sure">确定</div>
+        </footer>
+    </div>
+
+    <div class="page set-award-page" style="display: none;">
+        <div class="main">
+            <section class="form pd-lr-m award-set-form">
+                <div class="form-item">
+                    <label>打赏功能</label>
+                    <div>
+                        <span class="switch switch-award"><input type="hidden" value="false" /></span>
+                    </div>
+                </div>
+                <div class="form-item amount-set-box pd-t-m">
+                    <label>点击输入框设置红包打赏金额</label>
+                    <ul class="amount-input-list mg-t-s">
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                        <li class="amount-input-item">
+                            <input class="input-amount" type="text" value="1.11"  />
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+        <footer class="footer bd-t">
+            <div class="btn btn-normal btn-back">返回</div>
+            <div class="btn btn-sure">确定</div>
+        </footer>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.imgreader.js"></script>
+    <script>
+        var initSetSignupPage = function() {
+            var $page = $('.set-signup-page');
+            var $signForm = $page.find('.sign-form');
+            $page.find('.switch-signform').initSwitch({
+                change: function(on) {
+                    if(on){
+                        $signForm.addClass('active');
+                    }
+                    else {
+                        $signForm.removeClass('active');
+                    }
+                }
+            });
+            var initItemMgr = function() {
+                var $btnAddItem = $signForm.find('.btn-additem');
+                var count = 0;
+                var contentArr = [
+                    {
+                        name:'customKeyC',
+                        tips:'报名的信息（例如QQ）'
+                    },
+                    {
+                        name:'customKeyD',
+                        tips:'报名的信息（例如职位）'
+                    }
+                ];
+                var template = '<div class="form-item bd-none">\
+                                <input type="text" name="{{name}}" placeholder="{{tips}}" value="" />\
+                                <span class="btn-remove mg-l-s mg-r-s"></span>\
+                        <!--<span class="checkbox mg-l-s" data-init-control="initCheckbox">必填<input type="hidden" value="" /></span>-->\
+                        </div>';
+
+                var addItem = function() {
+                    var content = contentArr[count];
+                    html = template.replace('{{name}}', content.name).replace('{{tips}}', content.tips);
+                    var $item = $(html);
+                    $item.find('.btn-remove').click(function() {
+                        removeItem($item);
+                        $btnAddItem.parent('.form-item').show();
+                    });
+                    $btnAddItem.parent('.form-item').before($item);
+                    count++;
+                };
+                var removeItem = function($item) {
+                    $item.remove();
+                    count--;
+                };
+
+                $btnAddItem.click(function(){
+                    addItem();
+                    if(count>=2) {
+                        $(this).parent('.form-item').hide();
+                    }
+                });
+
+
+
+            }();
+        }
+        initSetSignupPage();
+
+
+        var initSetAwardPage = function() {
+            var $page = $('.set-award-page');
+            var $awardSetForm = $page.find('.award-set-form');
+            $awardSetForm.find('.switch-award').initSwitch({
+                change:function(on) {
+                    if(on) {
+                        $awardSetForm.addClass('active');
+                    }
+                    else {
+                        $awardSetForm.removeClass('active');
+                    }
+                }
+            });
+
+        }
+        initSetAwardPage();
+
+    </script>
+</body>
+</html>

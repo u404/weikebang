@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>创建课程</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .live-edit-page .ercode-box { margin-top: 2.4rem; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .live-edit-page .ercode-box .ercode { width: 12rem; height: 12rem; }
+        .live-edit-page .ercode-box figcaption { margin-top: 0.8rem; }
+    </style>
+</head>
+<body class="">
+    <div class="page live-edit-page">
+        <div class="main">
+            <section class="form pd-lr-m">
+                <div class="form-item">
+                    <label>直播号图标</label>
+                    <span class="live-icon iconfont icon-camera-fill fc-bw1" data-filename="LiveIcon" style="background-image: url('');"></span>
+                </div>
+                <div class="form-item">
+                    <input type="text" name="LiveName" placeholder="请输入直播号名称" value="" />
+                </div>
+                <div class="form-item form-item-textarea">
+                    <textarea name="LiveDesc" placeholder="请输入直播号简介"></textarea>
+                </div>
+            </section>
+            <section class="form pd-lr-m bd-t mg-t-s">
+                <div class="form-item">
+                    <label>直播号类型</label>
+                    <div class="select" data-init-control="initSelect">
+                        <input name="LiveType" type="hidden" value="" />
+                        <span class="text placeholder">请选择</span>
+                        <select name="LiveType">
+                            <option>母婴</option>
+                            <option>教育</option>
+                            <option>培训</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <figure class="ercode-box">
+                <img class="ercode" data-filename="ercode" src="Content/images/img-update-ercode.png" />
+                <figcaption>我的二维码</figcaption>
+            </figure>
+        </div>
+        <footer class="footer">
+            <div class="btn">创建</div>
+            <!--<div class="btn btn-normal">取消</div>-->
+            <!--<div class="btn">保存</div>-->
+        </footer>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.imgreader.js"></script>
+    <script>
+        $('.live-icon').imgReader({
+            success:function(imgUrl){
+                $('.live-icon').removeClass('iconfont').removeClass('icon-xiangji1').css('background-image','url('+imgUrl+')');
+            }
+        });
+        $('.ercode').imgReader({
+            success: function (imgUrl) {
+                $(this).attr('src', imgUrl);
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

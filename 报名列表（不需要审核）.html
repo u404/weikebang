@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>我的粉丝</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .signlist-page {  }
+    </style>
+</head>
+<body class="">
+    <div class="page user-common signlist-page">
+        <header class="header header-info-box bc-green">
+            <div class="count-info">
+                <div class="label">总人数</div>
+                <div class="count">56</div>
+            </div>
+        </header>
+        <div class="main">
+            <ul class="section user-list">
+            </ul>
+        </div>
+
+        <footer class="footer bd-t">
+            <div class="btn btn-normal">导入学员</div>
+        </footer>
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/jquery.scrollpager.js"></script>
+    <script>
+        $('.main').scrollPager({
+            preLength: 100,
+            successHandler:function(data){
+                var html = '';
+                for(var i=0;i<data.length;i++){
+                    html+='<li class="user-item">\
+                            <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>\
+                    <div class="user-info">\
+                            <span class="user-name">'+data[i].name+'</span>\
+                    <span class="datetime">'+data[i].time+'</span>\
+                    </div>\
+                    </li>';
+                }
+                $(this).find('.user-list').append(html);
+            }
+        });
+    </script>
+    <script>
+    </script>
+</body>
+</html>

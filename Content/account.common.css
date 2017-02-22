@@ -1,0 +1,56 @@
+.account-common .form .form-item { justify-content: flex-start; }
+.account-common .form .form-item label { width: 10rem; flex-shrink: 0; }
+.account-common .form .form-item span,
+.account-common .form .form-item input { flex-grow: 1; }
+.account-common .form .form-item.big-input { flex-wrap: wrap; }
+.account-common .form .form-item.big-input .inputbox { width: 100%; display: flex; align-items: center; }
+.account-common .form .form-item.big-input .inputbox-rmb {  }
+.account-common .form .form-item.big-input .inputbox-rmb:before { margin-left: 0.2rem; margin-right: 0.6rem; font-size: 2rem; content: "¥"; flex-grow: 0; flex-shrink: 0; }
+.account-common .form .form-item.big-input .inputbox-rmb input { width: 100%; font-size: 3rem; }
+.account-common .form .form-desc { padding: 0.8rem 0 0; font-size: 1rem; }
+.account-common .btn-main { margin-top: 2.0rem; }
+
+
+
+.account-common .base-log {
+    height: 6.0rem;
+    padding: 0 1.6rem;
+    background: #fff; border-bottom: 1px solid #e6e6e6;
+    display: flex; display: -webkit-flex; align-items: center;
+    line-height: 1.5;
+    color: #969696;
+}
+.account-common .base-log .time {
+    min-width: 3.4rem; font-size: 1.2rem;
+    flex: 0 0 auto; display: flex; flex-flow: column wrap; justify-content: center; align-content: center; align-items: center; text-align: center;
+
+}
+.account-common .base-log .class-icon { flex: 0 0 auto; margin-left: 1.6rem; width: 4.8rem; height: 4.8rem; background: center no-repeat; background-size: cover; }
+.account-common .base-log .info-box { width: 50%; margin-left: 1.6rem; flex-grow: 1; display: flex; flex-flow: row wrap; align-content: center; align-items: center; line-height: 1.8; }
+.account-common .base-log .title { width: 100%; color: #444; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-wrap: break-word; }
+.account-common .base-log .desc { width: 100%; font-size: 1.2rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-wrap: break-word; }
+
+
+
+.account-common .classincome-log { position: relative;  margin-top: 0.8rem; display: block; padding: 1.2rem 1.6rem; font-size: 1.2rem; line-height: 1.8; border-top: 1px solid #e6e6e6; }
+.account-common .classincome-log .state-label { position: absolute; top: 0; right: 0; width: 6.0rem; height: 1.8rem; line-height: 1.8rem; font-size: 1rem; text-align: center; }
+.account-common .classincome-log .class-title { font-size: 1.4rem; }
+.account-common .classincome-log .account-info { margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #e6e6e6;  }
+.account-common .classincome-log label { margin-right: 1em; }
+
+
+.account-common .stuincome-log {
+    height: 6.0rem;
+    padding: 0 1.6rem;
+    background: #fff; border-bottom: 1px solid #e6e6e6;
+    display: flex; display: -webkit-flex; align-items: center;
+    line-height: 1.5;
+    color: #969696;
+}
+.account-common .stuincome-log .time {
+    min-width: 3.4rem; font-size: 1.2rem;
+    flex: 0 0 auto; display: flex; flex-flow: column wrap; justify-content: center; align-content: center; align-items: center; text-align: center;
+}
+.account-common .stuincome-log .user-icon { flex: 0 0 auto; width: 4rem; height: 4rem; }
+.account-common .stuincome-log .user-name { flex: 0 0 auto; margin-left: 1.6rem; width: 8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #444; }
+.account-common .stuincome-log .desc { margin-left: 1.6rem; width: 100%; font-size: 1.2rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-wrap: break-word; }

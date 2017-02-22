@@ -1,0 +1,48 @@
+.user-icon {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 2.5rem;
+    background: none center no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.user-icon:after {
+    position: absolute; right: -0.2rem; bottom: -0.2rem; width: 1.9rem; height: 1.9rem; display: flex; justify-content: center; align-items: center; border-radius: 100%; border: 2px solid #fff; font-family: iconfont; font-size: 1.0rem; line-height: 1;
+}
+.user-icon.state-onmic:after,
+.state-onmic .user-icon:after {
+     background: #fd7900; color: #fff; content: "\e61c";
+}
+
+.user-icon.state-offspeak:after,
+.state-offspeak .user-icon:after {
+     background: #fff; color: #ff0000; font-size: 1.5rem; content: "\e61d";
+}
+
+.user-common .header-info-box {
+    height: 6rem;
+    display: flex;
+    -webkit-display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+}
+.user-common .header-info-box>* {
+    width: 100%;
+}
+.user-common .header-info-box .count-info { line-height: 1; }
+.user-common .header-info-box .count-info .label { font-size: 1.2rem; color: #dfffe8; }
+.user-common .header-info-box .count-info .count { margin-top: 0.8rem; font-size: 1.8rem; }
+
+.user-common .user-list {  }
+.user-common .user-list .user-item { display: flex; height: 6rem; align-items: center; }
+.user-common .user-list .user-item .user-icon { margin: auto 1.6rem; }
+.user-common .user-list .user-item .user-info { align-self: stretch; padding-right: 1.6rem; flex-grow: 1; border-bottom: 1px solid #eee;
+    display: flex; flex-flow: column nowrap; justify-content: center;
+}
+.user-common .user-list .user-item .user-info .user-name { display: block; color: #59b574; }
+.user-common .user-list .user-item .user-info .datetime { display: block; font-size: 1.2rem; color: #969696; }
+.user-common .user-list .user-item:last-child .user-info { border-bottom: 1px solid transparent; }

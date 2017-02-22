@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>成员管理</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .usermanage-page {  }
+        .usermanage-page .searchbox { height: 5.5rem; display: flex; align-items: center; }
+        .usermanage-page .searchbox input { display: block; width: 100%; height: 3rem; padding: 0.8rem 0; text-align: center; background: #e3e3e9; border: none; border-radius: 0.5rem; }
+        .usermanage-page .searchbox input::-moz-placeholder { font-family: iconfont, Helvetica, Arial, "Microsoft Yahei"; color: #969696; }
+        .usermanage-page .searchbox input:-ms-input-placeholder { font-family: iconfont, Helvetica, Arial, "Microsoft Yahei"; color: #969696; }
+        .usermanage-page .searchbox input::-webkit-input-placeholder { font-family: iconfont, Helvetica, Arial, "Microsoft Yahei"; color: #969696; }
+        .usermanage-page .searchbox input:focus {  }
+        .usermanage-page .user-list .user-item { position: relative; height: auto; padding: 1.6rem 0 0; align-items: flex-start; }
+        .usermanage-page .user-list .user-item .state-label { vertical-align: middle; line-height: 0; margin-left: 0.8rem; padding: 0.1rem 0.2rem; background: #59b574; color: #fff; border-radius: 0.2rem; font-size: 1.0rem; }
+        .usermanage-page .user-list .user-item .user-info { padding-bottom: 1.6rem; }
+        .usermanage-page .user-list .user-item .user-icon { position: relative; margin: 0 1.6rem; }
+        .usermanage-page .user-list .user-item { font-size: 1.2rem; color: #969696; }
+        .usermanage-page .user-list .user-item .user-name { font-size: 1.4rem; }
+        .usermanage-page .user-list .user-item .cbtn { position: absolute; right: 1.6rem; top: 50%; margin-top: -0.75em; color: #444;display: none; }
+
+        .usermanage-page .user-list .user-item.state-offline { color: #969696; }
+        .usermanage-page .user-list .user-item.state-offline .user-name { color: inherit; }
+        .usermanage-page .user-list .user-item.state-offline .state-label { display: none; }
+        .usermanage-page .user-list .user-item.state-onmic {  }
+        .usermanage-page .user-list .user-item.state-onmic .btn-offmic { display: block; }
+        .usermanage-page .user-list .user-item.state-offspeak {  }
+        .usermanage-page .user-list .user-item.state-offspeak .btn-onspeak { display: block; }
+
+
+    </style>
+</head>
+<body class="">
+    <div class="page user-common usermanage-page">
+        <header class="header bc-green">
+            <section class="searchbox pd-lr-m bd-b">
+                <input type="text" value="" placeholder="&#xe60a; 输入微信号名称搜索" autocomplete />
+            </section>
+            <section class="tab-list header-tab-list">
+                <div class="tab active"><span>全部（5540）</span></div>
+                <div class="tab"><span>禁言成员（360）</span></div>
+            </section>
+        </header>
+        <div class="main tabcontent-list">
+            <div class="tabcontent alluser-box">
+                <div class="section user-list">
+                    <div class="slider-menu">
+                        <div class="slider-menu-wrap">
+                            <div class="slider-menu-main user-item">
+                                <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>
+                                <div class="user-info">
+                                    <span class="user-name">木木<span class="state-label">在线</span></span>
+                                    <span class="datetime">2016-01-01 12:00</span>
+                                </div>
+                            </div>
+                            <div class="slider-menu-btns">
+                                <div class="btn bc-red btn-del">删除</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabcontent offspeakuser-box">
+                <ul class="section user-list">
+                    <li class="user-item state-offspeak">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>
+                        <div class="user-info">
+                            <span class="user-name">木木<span class="state-label">在线</span></span>
+                            <span class="datetime">2016-01-01 12:00</span>
+                        </div>
+                        <div class="cbtn btn-onspeak">取消禁言</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.scrollpager.js"></script>
+    <script>
+        var initUserManagePage = function() {
+            var $page = $('.usermanage-page');
+            var initAllUserBox = function($box) {
+                $box.scrollPager({
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++) {
+                            html += '';
+                        }
+                        var $html = $(html);
+                        $html.find('.user-item').each(function(){
+                            var $this = $(this);
+                            $this.find('.radio').initCheckbox({$clickHandler: $this});
+                        });
+                        $(this).find('.user-list').append($html);
+                    }
+                });
+            };
+            var initOffspeakUserBox = function($box) {
+                $box.scrollPager({
+                    preLength: 100,
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++) {
+                            html += '';
+                        }
+                        $(this).find('.user-list').append(html);
+                    }
+                });
+            };
+
+            $page.find('.header-tab-list').initTab({
+                $content:$page.find('.tabcontent-list'),
+                contentChange:function() {
+                    var $this = $(this);
+                    if($this.data('initData')){
+                        return;
+                    }
+                    $this.data('initData',true);
+                    if($this.hasClass('alluser-box')) {
+                        initAllUserBox($this);
+                    }
+                    else if($this.hasClass('offspeakuser-box')) {
+                        initOffspeakUserBox($this);
+                    }
+                }
+            });
+
+
+            $page.find('.user-item').each(function() {
+                var $this = $(this);
+                $this.find('.radio').initCheckbox({ $clickHandler: $this });
+            });
+
+        };
+
+        initUserManagePage();
+        $('.slider-menu').initSliderMenu();
+    </script>
+    <script>
+    </script>
+</body>
+</html>

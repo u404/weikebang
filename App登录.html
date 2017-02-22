@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>App登录</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/animation.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <style>
+        .applogin-page { background: #fff; }
+        .applogin-page .main { padding: 115% 1.6rem 0; background: url(Content/images/bg-applogin.jpg) center top no-repeat; background-size: contain; }
+        .applogin-page .main .login-tips { display: -webkit-flex; display: flex;
+            -webkit-justify-content: space-between; justify-content: space-between;
+            -webkit-align-items: center; align-items: center;
+            text-align: center; color: #00af6a; white-space: nowrap; }
+        .applogin-page .main .login-tips:before { margin-right: 1rem; width: 100%; height: 0.2rem; background: #00af6a; content: ""; }
+        .applogin-page .main .login-tips:after { margin-left: 1rem; width: 100%; height: 0.2rem; background: #00af6a; content: ""; }
+        .applogin-page .main .btn-wxlogin { margin-top: 1.8rem; display: -webkit-flex; display: flex;
+            -webkit-justify-content: center; justify-content: center;
+            -webkit-align-items: center; align-items: center; }
+        .applogin-page .main .btn-wxlogin:before { display: inline-block; margin-right: 0.8rem; width: 3.2rem; height: 2.6rem; background: url(Content/images/icon-wx.png) center no-repeat; background-size: contain; content: ""; }
+        .applogin-page .site-copyright { margin-bottom: 1.6rem; font-size: 0.8rem; color: #969696;  }
+    </style>
+</head>
+<body class="">
+    <div class="page applogin-page">
+        <div class="main">
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+        </div>
+        <footer class="footer">
+            <div class="site-copyright">
+                Copyright &copy; 2016 易纵互联（北京）科技有限公司
+            </div>
+        </footer>
+    </div>
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.imgreader.js"></script>
+    <script>
+        $('.live-icon').imgReader({
+            success:function(imgUrl){
+                $('.live-icon').removeClass('iconfont').removeClass('icon-xiangji1').css('background-image','url('+imgUrl+')');
+            }
+        });
+    </script>
+</body>
+</html>

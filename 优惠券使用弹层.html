@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>直播间</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <style>
+        .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5);}
+        .bmenu { font-size: 10px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; overflow: hidden; }
+        .bmenu .bmenu-body { position: absolute; width: 100%; left: 0; bottom: 0; }
+        .bmenu .bmenu-body
+        .bmenu { height: 0; /*animation: bmenuHide 0s ease-in 0.1s forwards; -webkit-animation: bmenuHide 0s ease-in 0.1s forwards;*/ }
+        .bmenu .overlay { opacity: 0; transition: 0.1s ease-in; -webkit-transition: 0.1s ease-in; }
+        .bmenu .bmenu-body { transform: translateY(100%); transition: 0.1s ease-in; -webkit-transform: translateY(100%); -webkit-transition: 0.1s ease-in; }
+        .bmenu.active { height: 100%; /*animation: bmenuShow 0s forwards;*/ }
+        .bmenu.active .overlay { opacity: 1; }
+        .bmenu.active .bmenu-body { transform: translateY(0); -webkit-transform: translateY(0); }
+
+        .bmenu-couponpay {  }
+        .bmenu-couponpay .bmenu-body { background: #fff; }
+        .bmenu-couponpay .price-info { height: 4.4rem; border-bottom: 1px solid #e6e6e6; }
+        .bmenu-couponpay .coupon-info { height: 7.3rem; }
+        .bmenu-couponpay .flex-lr { align-items: center; }
+        .bmenu-couponpay .icon-coupon-big { display: block; width: 6rem; height: 4.2rem; background: url(Content/images/icon-coupon-big.png) center no-repeat; background-size: contain; }
+        .bmenu-couponpay .text-right { text-align: right; }
+
+    </style>
+</head>
+<body class="">
+    <div class="page live-common coupon-common bindcoupon-page">
+        <header class="header-info-box" style="background-image: url(Content/images/1.jpg);">
+            <div class="user-baseinfo">
+                <div class="user-icon" style="background-image: url(Content/images/1.jpg);"></div>
+                <span class="user-name">野茫茫</span>
+            </div>
+        </header>
+        <div class="main">
+            <section class="coupon-box section pd-lr-m">
+                <div class="coupon">
+                    <div class="coupon-content">
+                        <div class="coupon-main">
+                            <div class="amount-info">
+                                <span class="amount">200</span>
+                            </div>
+                            <div class="count-info">
+                                <div>剩余 <span class="">5</span>个</div>
+                            </div>
+                        </div>
+                        <div class="coupon-footer flex-center">
+                            <div class="class-title">微课帮直播展示</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="pd-lr-m pd-t-m">
+                <button class="btn btn-main">立即使用</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bmenu bmenu-couponpay">
+        <div class="overlay"></div>
+        <div class="bmenu-body">
+            <div class="price-info flex-lr pd-lr-m">
+                <div class="left-box">课程价格</div>
+                <div class="right-box">¥ <span class="text-price">19.90</span></div>
+            </div>
+            <div class="coupon-info flex-lr pd-lr-m">
+                <div class="left-box">
+                    <i class="icon-coupon-big"></i>
+                </div>
+                <div class="right-box text-right">
+                    <div>已使用优惠券抵扣 ¥ <span class="text-coupon">18.90</span></div>
+                    <div>还需支付 <span class="fc-yellow">¥ <span class="text-trueprice">1.00</span></span></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="btn btn-pay">立即付款</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/dropload.js"></script>
+    <script>
+
+        $('.bmenu').addClass('active');
+
+
+    </script>
+</body>
+</html>

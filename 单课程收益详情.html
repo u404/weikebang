@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>课程收益详情</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/account.common.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+</head>
+<body class="">
+    <div class="page account-common classincomedetail-page">
+        <header class="header header-tab-box tab-list">
+            <div class="tab active"><span>课程收益</span></div>
+            <div class="tab"><span>红包收益</span></div>
+        </header>
+        <div class="main tabcontent-list">
+            <div class="tabcontent allincome-box">
+                <ul class="log-list">
+                    <li class="stuincome-log">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="user-name">成成</div>
+                        <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>
+                    </li>
+                    <li class="stuincome-log">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="user-name">成fasdfasdf成</div>
+                        <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tabcontent bonusincome-box">
+                <ul class="log-list">
+                    <li class="stuincome-log">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="user-name">成成</div>
+                        <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>
+                    </li>
+                    <li class="stuincome-log">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="user-name">成fasdfasdf成</div>
+                        <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.scrollpager.js"></script>
+    <script>
+        var initClassIncomeDetailPage = function() {
+            var $page = $('.classincomedetail-page');
+            var initAllIncomeBox = function($box) {
+                $box.scrollPager({
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="stuincome-log">\
+                                    <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>\
+                            <div class="user-name">成成</div>\
+                            <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>\
+                            </li>';
+                        }
+                        $(this).find('.log-list').append(html);
+                    }
+                });
+            };
+            var initBonusIncomeBox = function($box) {
+                $box.scrollPager({
+                    preLength: 100,
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="stuincome-log">\
+                                    <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>\
+                            <div class="user-name">成成</div>\
+                            <div class="desc">支付了<span class="fc-yellow price">0.01元</span></div>\
+                            </li>';
+                        }
+                        $(this).find('.log-list').append(html);
+                    }
+                });
+            };
+
+            $page.find('.header-tab-box').initTab({
+                contentChange:function() {
+                    var $this = $(this);
+                    if($this.data('initData')){
+                        return;
+                    }
+                    $this.data('initData',true);
+                    if($this.hasClass('allincome-box')) {
+                        initAllIncomeBox($this);
+                    }
+                    else if($this.hasClass('bonusincome-box')) {
+                        initBonusIncomeBox($this);
+                    }
+                }
+            });
+
+        };
+
+        initClassIncomeDetailPage();
+
+    </script>
+</body>
+</html>

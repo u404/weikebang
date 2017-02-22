@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>生成优惠券</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/account.common.css" rel="stylesheet" />
+    <style>
+        .createcoupon-page { background: #fff; }
+        .createcoupon-page .form .form-item input { text-align: right; }
+        .createcoupon-page .form .form-desc { padding-top: 0.8rem; font-size: 1rem; }
+        .createcoupon-page .btn-main  { margin-top: 2rem; }
+    </style>
+</head>
+<body class="">
+    <div class="page createcoupon-page pd-lr-m">
+        <div class="main form">
+            <div class="form-item">
+                <label>优惠金额</label>
+                <input type="number" pattern="[0-9\.]*" placeholder="请输入优惠金额" />
+            </div>
+            <div class="form-item">
+                <label>优惠券数量</label>
+                <input type="number" pattern="[0-9]*" placeholder="优惠券数量（不超过500个）" />
+            </div>
+            <div class="form-desc">
+                <p>1、优惠券永久有效，仅可用于当前课程 </p>
+                <p>2、一张优惠券只能被一位学员使用 </p>
+                <p>3、优惠券金额不能大于课程收费金额 </p>
+                <p>4、优惠券可以重复生成 </p>
+            </div>
+            <button class="btn btn-main btn-create">创建优惠券</button>
+        </div>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script>
+    </script>
+</body>
+</html>

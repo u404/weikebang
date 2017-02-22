@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>flex测试</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/animation.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <style>
+        body { display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: stretch; }
+        .this-main { position: relative; height: 100%; background: #e6e6e6; overflow: auto; }
+        .this-main-2 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #e6e6e6; overflow: auto; }
+        .this-footer { margin-top: 10px; flex: 0 0 auto; background: #00af6a; }
+    </style>
+</head>
+<body class="">
+    <div class="this-main">
+        <div class="this-main-2">
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+            <div class="login-tips">登录方式</div>
+            <div class="btn btn-main btn-wxlogin">微信登录</div>
+            <div class="">这是底部</div>
+        </div>
+    </div>
+    <footer class="this-footer">
+        <div class="site-copyright">
+            Copyright &copy; 2016 易纵互联（北京）科技有限公司
+        </div>
+    </footer>
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.imgreader.js"></script>
+    <script>
+        $('.live-icon').imgReader({
+            success:function(imgUrl){
+                $('.live-icon').removeClass('iconfont').removeClass('icon-xiangji1').css('background-image','url('+imgUrl+')');
+            }
+        });
+    </script>
+</body>
+</html>

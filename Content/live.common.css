@@ -1,0 +1,26 @@
+.live-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+    line-height: 3.5rem;
+    font-size: 2.5rem;
+    background: none center no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.live-common .class-list {  }
+.live-common .class-list>* { border-bottom: 1px solid #e6e6e6; }
+.live-common .class-list .class-item { display: flex; justify-content: flex-start; padding: 1.6rem; background: #fff; flex: 0 0 auto; width: 100%; }
+.live-common .class-list .class-item .class-img { flex: 0 0 auto; width: 12.8rem; height: 7.2rem; background: center no-repeat; background-size: cover; }
+.live-common .class-list .class-item .class-info { flex: 1 1 auto; margin-left: 0.8rem; width: 100%; position: relative; }
+.live-common .class-list .class-item .class-title { word-break: break-all; max-height: 3em; overflow: hidden; }
+.live-common .class-list .class-item .class-hot { font-size: 1.2rem; }
+.live-common .class-list .class-item .class-hot:before { margin-right: 0.4rem; font-family: iconfont; content: "\e601"; }
+.live-common .class-list .class-item .class-time { position: absolute; bottom: 0; height: 1.6rem; line-height: 1.6rem; padding: 0 0.4rem; border: 1px solid #e6e6e6; color: #969696; border-radius: 0.2rem; }
+
+.live-common .class-list .class-item .class-time.state-active { border: 1px solid #59b574; color: #59b574; }
+
+.live-common .class-list .class-item.state-hidden {  }
+.live-common .class-list .class-item.state-hidden .class-info .class-time { display: none; }
+.live-common .class-list .class-item.state-hidden .class-info:after { position: absolute; bottom: 0; height: 1.6rem; line-height: 1.6rem; padding: 0 0.4rem; border: 1px solid #f00; color: #f00; border-radius: 0.2rem; content: "δչʾ"; }

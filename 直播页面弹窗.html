@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>直播页面弹窗</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .user-fans-page { padding: 6rem 0 4.8rem; }
+    </style>
+</head>
+<body class="user-common user-fans-page">
+
+<!--
+    <div class="dialog select-loadstyle-dialog" style="display: none;">
+        <div class="dialog-body">
+            <div class="dialog-main flex-center">
+                课程已开始，从哪里开始阅读
+            </div>
+            <div class="dialog-ft flex-col">
+                <div class="btn btn-gotofirst">从第一条阅读</div>
+                <div class="btn btn-gotonew">最新消息</div>
+            </div>
+        </div>
+    </div>
+-->
+
+    <style>
+        .set-classdelay-dialog .delay-radio-group li:not(:first-child) { margin-left: 2rem; }
+        .set-classdelay-dialog .delay-radio-group li.active { color: #59b574; }
+    </style>
+
+    <div class="dialog set-classdelay-dialog" style="display: none;">
+        <div class="dialog-body">
+            <div class="dialog-main">
+                <div class="flex-center tips-text">下课时间还剩10分钟，是否延长时间</div>
+                <ul class="flex-center delay-radio-group mg-t-m" data-init-control="initRadioGroup">
+                    <li class="cbtn" data-value="0">不延时</li>
+                    <li class="cbtn" data-value="15">15分钟</li>
+                    <li class="cbtn" data-value="30">30分钟</li>
+                    <li class="cbtn" data-value="60">1小时</li>
+                    <input class="input-delay" type="hidden" value="0" />
+                </ul>
+            </div>
+            <div class="dialog-ft flex-row">
+                <div class="btn dialog-action-hide btn-cancel">取消</div>
+                <div class="btn btn-sure">确定</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script>
+
+        /*
+        var selectLoadStyleDialog = dialog('.select-loadstyle-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+
+                });
+
+            }
+        });
+        selectLoadStyleDialog.show();
+        */
+
+        var setClassDelayDialog = dialog('.set-classdelay-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+
+                });
+
+            }
+        });
+        setClassDelayDialog.show();
+
+    </script>
+</body>
+</html>

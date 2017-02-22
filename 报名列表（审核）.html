@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>我的粉丝</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .signlist-page {  }
+        .signlist-page .user-list .user-item { position: relative; height: auto; padding: 1.6rem 0 0; align-items: flex-start; }
+        .signlist-page .user-list .user-item .user-info { padding-bottom: 1.6rem; }
+        .signlist-page .user-list .user-item .user-icon { margin: 0 1.6rem; }
+        .signlist-page .user-list .user-item { font-size: 1.2rem; color: #969696; }
+        .signlist-page .user-list .user-item .user-name { font-size: 1.4rem; }
+        .signlist-page .user-list .user-item .radio { position: absolute; right: 1.6rem; top: 1.6rem; }
+        .signlist-page .user-list .user-item .radio:before { margin-right: 0; }
+    </style>
+</head>
+<body class="">
+    <div class="page user-common signlist-page">
+        <header class="header bc-green">
+            <div class="header-info-box">
+                <div class="count-info">
+                    <div class="label">总人数</div>
+                    <div class="count">56</div>
+                </div>
+                <div class="count-info">
+                    <div class="label">缴费人数</div>
+                    <div class="count">56</div>
+                </div>
+                <div class="count-info">
+                    <div class="label">缴费金额</div>
+                    <div class="count">5612.00</div>
+                </div>
+            </div>
+            <div class="tab-list header-tab-list">
+                <div class="tab active"><span>待审核（5540）</span></div>
+                <div class="tab"><span>已通过（360）</span></div>
+            </div>
+        </header>
+        <div class="main tabcontent-list">
+            <div class="tabcontent verifying-box">
+                <ul class="section user-list">
+                    <li class="user-item">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>
+                        <div class="user-info">
+                            <span class="user-name">木木</span>
+                            <span class="true-name">姓名：莫小北</span>
+                            <span class="phone">手机：13464662212</span>
+                            <span class="job">产品经理</span>
+                            <span class="sex">性别：男</span>
+                            <span class="datetime">2016-01-01 12:00</span>
+                        </div>
+                        <span class="radio"><input type="hidden" value="" /></span>
+                    </li>
+                    <li class="user-item">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>
+                        <div class="user-info">
+                            <span class="user-name">木木</span>
+                            <span class="true-name">姓名：莫小北</span>
+                            <span class="phone">手机：13464662212</span>
+                            <span class="job">产品经理</span>
+                            <span class="sex">性别：男</span>
+                            <span class="datetime">2016-01-01 12:00</span>
+                        </div>
+                        <span class="radio"><input type="hidden" value="" /></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="tabcontent verified-box">
+                <ul class="section user-list">
+                    <li class="user-item">
+                        <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>
+                        <div class="user-info">
+                            <span class="user-name">木木</span>
+                            <span class="true-name">姓名：莫小北</span>
+                            <span class="phone">手机：13464662212</span>
+                            <span class="job">产品经理</span>
+                            <span class="sex">性别：男</span>
+                            <span class="datetime">2016-01-01 12:00</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer bd-t">
+            <div class="btn btn-normal">提醒</div>
+            <div class="btn btn-normal bd-l">通过</div>
+            <div class="btn">全选</div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.scrollpager.js"></script>
+    <script>
+        var initSignListPage = function() {
+            var $page = $('.signlist-page');
+            var initVerifyingBox = function($box) {
+                $box.scrollPager({
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="user-item">\
+                                    <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>\
+                                        <div class="user-info">\
+                                            <span class="user-name">木木</span>\
+                                            <span class="true-name">姓名：莫小北</span>\
+                                            <span class="phone">手机：13464662212</span>\
+                                            <span class="job">产品经理</span>\
+                                            <span class="sex">性别：男</span>\
+                                            <span class="datetime">2016-01-01 12:00</span>\
+                                            <span class="radio"><input type="hidden" value="" /></span>\
+                                        </div>\
+                                    </li>';
+                        }
+                        var $html = $(html);
+                        $html.find('.user-item').each(function(){
+                            var $this = $(this);
+                            $this.find('.radio').initCheckbox({$clickHandler: $this});
+                        });
+                        $(this).find('.user-list').append($html);
+                    }
+                });
+            };
+            var initVerifiedBox = function($box) {
+                $box.scrollPager({
+                    preLength: 100,
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="user-item">\
+                                    <div class="user-icon" style="background-image: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/8/64.png);"></div>\
+                                        <div class="user-info">\
+                                            <span class="user-name">木木</span>\
+                                            <span class="true-name">姓名：莫小北</span>\
+                                            <span class="phone">手机：13464662212</span>\
+                                            <span class="job">产品经理</span>\
+                                            <span class="sex">性别：男</span>\
+                                            <span class="datetime">2016-01-01 12:00</span>\
+                                        </div>\
+                                    </li>';
+                        }
+                        $(this).find('.user-list').append(html);
+                    }
+                });
+            };
+
+            $page.find('.header-tab-list').initTab({
+                $content:$page.find('.tabcontent-list'),
+                contentChange:function() {
+                    var $this = $(this);
+                    if($this.data('initData')){
+                        return;
+                    }
+                    $this.data('initData',true);
+                    if($this.hasClass('verifying-box')) {
+                        initVerifyingBox($this);
+                    }
+                    else if($this.hasClass('verified-box')) {
+                        initVerifyingBox($this);
+                    }
+                }
+            });
+
+
+            $page.find('.user-item').each(function() {
+                var $this = $(this);
+                $this.find('.radio').initCheckbox({ $clickHandler: $this });
+            });
+
+        };
+
+        initSignListPage();
+    </script>
+    <script>
+    </script>
+</body>
+</html>

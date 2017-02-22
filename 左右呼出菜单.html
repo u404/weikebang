@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>我的课程</title>
+    <link href="Content/swiper-3.3.1.min.css" rel="stylesheet" />
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/live.common.css" rel="stylesheet" />
+    <style>
+        .class-list-page {  }
+        .slider-menu-btns { display: flex; flex-flow: row nowrap; }
+        .slider-menu-btns .btn-edit { width: 5em; height: 100%; }
+        .slider-menu-btns .btn-del { width: 5em; height: 100%; }
+    </style>
+</head>
+<body class="live-common class-list-page">
+    <div class="page live-common class-list-page">
+        <div class="main">
+            <div class="content-list">
+                <div class="content class-list">
+
+                    <div class="slider-menu">
+                        <div class="slider-menu-wrap">
+                            <a class="class-item slider-menu-main">
+                                <div class="class-img" style="background-image: url(Content/images/1.jpg);"></div>
+                                <div class="class-info">
+                                    <div class="class-title">广发的发地方撒非得撒ffasdfsad发士大夫撒旦法师的地方</div>
+                                    <div class="class-hot fc-bw1">28</div>
+                                    <div class="class-time fc-bw1">今天 08:00 结束</div>
+                                </div>
+                            </a>
+                            <div class="slider-menu-btns">
+                                <div class="btn bc-red btn-edit">编辑</div>
+                                <div class="btn bc-green btn-del">删除</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-menu">
+                        <div class="slider-menu-wrap">
+                            <a class="class-item slider-menu-main">
+                                <div class="class-img" style="background-image: url(Content/images/1.jpg);"></div>
+                                <div class="class-info">
+                                    <div class="class-title">广发的发地方撒非得撒ffasdfsad发士大夫撒旦法师的地方</div>
+                                    <div class="class-hot fc-bw1">28</div>
+                                    <div class="class-time fc-bw1">今天 08:00 结束</div>
+                                </div>
+                            </a>
+                            <div class="slider-menu-btns">
+                                <div class="btn bc-red btn-edit">编辑</div>
+                                <div class="btn bc-green btn-del">删除</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-menu">
+                        <div class="slider-menu-wrap">
+                            <a class="class-item slider-menu-main">
+                                <div class="class-img" style="background-image: url(Content/images/1.jpg);"></div>
+                                <div class="class-info">
+                                    <div class="class-title">广发的发地方撒非得撒ffasdfsad发士大夫撒旦法师的地方</div>
+                                    <div class="class-hot fc-bw1">28</div>
+                                    <div class="class-time fc-bw1">今天 08:00 结束</div>
+                                </div>
+                            </a>
+                            <div class="slider-menu-btns">
+                                <div class="btn bc-red btn-edit">编辑</div>
+                                <div class="btn bc-green btn-del">删除</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <button class="btn">创建课程</button>
+        </footer>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script>
+
+
+        $('.slider-menu').initSliderMenu();
+
+        for(var i=0;i<100;i++) {
+            $('.class-list').append('<div class="slider-menu">\
+                    <div class="slider-menu-wrap">\
+                    <a class="class-item slider-menu-main">\
+                    <div class="class-img" style="background-image: url(Content/images/1.jpg);"></div>\
+            <div class="class-info">\
+                    <div class="class-title">广发的发地方撒非得撒ffasdfsad发士大夫撒旦法师的地方</div>\
+            <div class="class-hot fc-bw1">28</div>\
+            <div class="class-time fc-bw1">今天 08:00 结束</div>\
+            </div>\
+            </a>\
+            <div class="slider-menu-btns">\
+                    <div class="btn bc-red btn-edit">编辑</div>\
+            <div class="btn bc-green btn-del">删除</div>\
+            </div>\
+            </div>\
+            </div>');
+        }
+        $('.slider-menu').initSliderMenu();
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

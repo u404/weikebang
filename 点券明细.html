@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>点券明细</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/account.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+</head>
+<body class="">
+    <div class="page account-common coupondetail-page">
+        <header class="header header-tab-box tab-list">
+            <div class="tab active"><span>点券消耗</span></div>
+            <div class="tab"><span>点券充值</span></div>
+        </header>
+        <div class="main tabcontent-list">
+            <div class="tabcontent consume-box">
+                <ul class="log-list">
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="class-icon" style="background: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="info-box">
+                            <div class="title">-6000点</div>
+                            <div class="desc">网页设计栅格系统实战大讲堂fasdfasdfasdfas</div>
+                        </div>
+                    </li>
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="class-icon" style="background: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>
+                        <div class="info-box">
+                            <div class="title">-6000点</div>
+                            <div class="desc">网页设计栅格系统实战大讲堂fasdfasdfasdfas</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tabcontent purchase-box">
+                <ul class="log-list">
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="title">+6000点</div>
+                            <div class="desc fc-bw1">待审核</div>
+                        </div>
+                    </li>
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="title">+6000点</div>
+                            <div class="desc fc-bw1">审核未通过</div>
+                        </div>
+                    </li>
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="title">+6000点</div>
+                            <div class="desc fc-yellow">充值中</div>
+                        </div>
+                    </li>
+                    <li class="base-log">
+                        <div class="time">
+                            <div>今天</div>
+                            <div>11:44</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="title">+6000点</div>
+                            <div class="desc fc-green">充值成功</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script src="Scripts/jquery.scrollpager.js"></script>
+    <script>
+        var initCouponDetailPage = function() {
+            var $page = $('.coupondetail-page');
+            var initConsumeBox = function($box) {
+                $box.scrollPager({
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="base-log">\
+                                        <div class="time">\
+                                            <div>今天</div>\
+                                            <div>11:44</div>\
+                                        </div>\
+                                        <div class="class-icon" style="background: url(https://weiclasstest.blob.core.chinacloudapi.cn/headimgs/1/64.png);"></div>\
+                                        <div class="info-box">\
+                                            <div class="title">-6000点</div>\
+                                            <div class="desc">网页设计栅格系统实战大讲堂fasdfasdfasdfas</div>\
+                                        </div>\
+                                    </li>';
+                        }
+                        $(this).find('.log-list').append(html);
+                    }
+                });
+            };
+            var initPurchaseBox = function($box) {
+                $box.scrollPager({
+                    preLength: 100,
+                    url:'',
+                    successHandler: function(data){
+                        var html = '';
+                        for(var i=0;i<data.length;i++){
+                            html+='<li class="base-log">\
+                                        <div class="time">\
+                                            <div>今天</div>\
+                                            <div>11:44</div>\
+                                        </div>\
+                                        <div class="info-box">\
+                                            <div class="title">+6000点</div>\
+                                            <div class="desc fc-bw1">待审核</div>\
+                                        </div>\
+                                    </li>';
+                        }
+                        $(this).find('.log-list').append(html);
+                    }
+                });
+            };
+
+            $page.find('.header-tab-box').initTab({
+                contentChange:function() {
+                    var $this = $(this);
+                    if($this.data('initData')){
+                        return;
+                    }
+                    $this.data('initData',true);
+                    if($this.hasClass('consume-box')) {
+                        initConsumeBox($this);
+                    }
+                    else if($this.hasClass('purchase-box')) {
+                        initPurchaseBox($this);
+                    }
+                }
+            });
+
+        };
+
+        initCouponDetailPage();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <style>
+        .slider-wrap { width: 100%; height: 100%; background: #fff; position: relative; }
+        .slider { position: absolute; width: 2rem; height: 2rem; background: #00af6a; }
+    </style>
+</head>
+<body>
+    <div class="slider-wrap">
+        <div class="slider"></div>
+    </div>
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script>
+        var $slider = $('.slider');
+
+
+        $.fn.onDrag = function(options) {
+
+            $(this).each(function(){
+                var opts = $.extend({}, $.fn.onDrag.defaults,options);
+
+                var eventPos = {
+                            x:0,
+                            y:0
+                        },
+                        that = this,
+                        $this = $(this),
+
+                        touchSupport = 'ontouchstart' in document,
+
+                        _getPos = function(e) {
+                            var posWrap = touchSupport ? e.touches[0] : e;
+                            return {
+                                x: posWrap.clientX,
+                                y: posWrap.clientY
+                            }
+                        },
+
+                        _start = function(e){
+                            eventPos = _getPos(e);
+                            console.log(eventPos);
+                            opts.start && opts.start.call(that,eventPos);
+                        },
+                        _move = function(e) {
+                            var lastPos = eventPos;
+                            eventPos = _getPos(e);
+                            opts.move && opts.move.call(that, eventPos, lastPos);
+                        },
+                        _end = function(e) {
+                            opts.end && opts.end.call(that,eventPos);
+                        },
+                        __end = _end;
+                if(touchSupport){
+                    _end = function(e) {
+                        that.removeEventListener('touchmove', _move);
+                        that.removeEventListener('touchend', _end);
+                        __end.call(that,e);
+                    };
+
+                    that.addEventListener('touchstart',function(e) {
+                        _start(e);
+                        that.addEventListener('touchmove',_move);
+                        that.addEventListener('touchend',_end);
+                    });
+                }
+                else {
+                    _end = function(e) {
+                        document.removeEventListener('mousemove',_move);
+                        document.removeEventListener('mouseup',_end);
+                        that.removeEventListener('losecapture',_end);
+                        window.removeEventListener('blur',_end);
+                        __end.call(that,e);
+                    };
+                    that.addEventListener('dragstart',function(e){
+                        e.preventDefault();
+                    });
+                    that.addEventListener('drag',function(e){
+                        e.preventDefault();
+                    });
+                    that.addEventListener('dragend',function(e){
+                        e.preventDefault();
+                    });
+                    that.addEventListener('mousedown',function(e) {
+                        _start(e);
+                        document.addEventListener('mousemove', _move);
+                        document.addEventListener('mouseup', _end);
+                        that.addEventListener('losecapture', _end);
+                        window.addEventListener('blur', _end);
+                    });
+                }
+
+            });
+
+        };
+        $.fn.onDrag.defaults = {
+            start: null,
+            move: null,
+            end: null
+        };
+
+        var cssPos = {
+            x:0,
+            y:0
+        };
+        $slider.onDrag({
+            start:function(pos){
+                cssPos.x = +$slider.css('left').replace('px','');
+                cssPos.y = +$slider.css('top').replace('px','');
+            },
+            move:function(pos,lastPos) {
+                cssPos.x = cssPos.x + pos.x - lastPos.x;
+                cssPos.y = cssPos.y + pos.y - lastPos.y;
+                $slider.css({
+                   'left': cssPos.x + 'px',
+                   'top': cssPos.y + 'px'
+               });
+            }
+        });
+
+    </script>
+</body>
+</html>

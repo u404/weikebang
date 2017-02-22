@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>对话框demo</title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href="Content/user.common.css" rel="stylesheet" />
+    <script type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function () {
+            _vds.push(['setAccountId', '9aac0be8ed61dd4b']);
+            (function () {
+                var vds = document.createElement('script');
+                vds.type = 'text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+    <style>
+        .user-fans-page { padding: 6rem 0 4.8rem; }
+    </style>
+</head>
+<body class="user-common user-fans-page">
+    <header class="header header-info-box">
+        <div class="count-info">
+            <div class="label">我的粉丝</div>
+            <div class="count">56</div>
+        </div>
+    </header>
+    <footer class="footer">
+        <div class="btn btn-normal">返回</div>
+    </footer>
+<!--
+    <div class="dialog">
+        <div class="dialog-body">
+            <div class="dialog-main"></div>
+            <div class="dialog-ft flex-row">
+                <div class="btn btn-normal dialog-action-hide">取消</div>
+                <div class="btn">确定</div>
+            </div>
+        </div>
+    </div>
+-->
+
+<!--
+<style>
+    .set-classprice-dialog .classprice-inputbox { border-bottom: 1px solid #59b574; }
+    .set-classprice-dialog .classprice-inputbox:before { margin-right: 1em; content: "¥"; }
+</style>
+
+    <div class="dialog set-classprice-dialog" style="display: none;">
+        <div class="dialog-body">
+            <div class="dialog-main form">
+                <div class="form-item classprice-inputbox">
+                    <input class="input-price" type="number" pattern="([0-9]+\.)*[0-9]*" title="请输入正确的金额" value="" />
+                </div>
+            </div>
+            <div class="dialog-ft flex-row">
+                <div class="btn btn-sure">确定</div>
+            </div>
+        </div>
+    </div>
+
+    -->
+<!--
+    <style>
+        .set-classtime-dialog .form .form-item { }
+        .set-classtime-dialog .form .form-item label { width: 10rem; flex-shrink: 0; }
+        .set-classtime-dialog .form .form-item .select { width: 100%; }
+        .set-classtime-dialog .form .form-item .select:after { visibility: hidden; }
+    </style>
+
+    <div class="dialog set-classtime-dialog" style="display: none;">
+        <div class="dialog-body">
+            <div class="dialog-main form">
+                <div class="form-item classtime-inputbox bd-b">
+                    <label>开始时间</label>
+                    <input class="input-time" type="datetime" value="2016-06-01 16:00" />
+                </div>
+                <div class="form-item classduration-inputbox bd-b">
+                    <label>上课时长</label>
+                    <div class="select" data-init-control="initSelect">
+                        <input name="LiveType" type="hidden" value="" />
+                        <span class="text placeholder">请选择</span>
+                        <select name="LiveType">
+                            <option>1小时</option>
+                            <option>1.5小时</option>
+                            <option>2小时</option>
+                            <option>2.5小时</option>
+                            <option>3小时</option>
+                            <option>4小时</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-ft flex-row">
+                <div class="btn btn-sure">确定</div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+    <style>
+        .class-signup-dialog .dialog-body { padding: 1.6rem; }
+        .class-signup-dialog .form .form-item { }
+        .class-signup-dialog .form .form-item label { width: 10rem; flex-shrink: 0; }
+        .class-signup-dialog .form .form-title { margin-bottom: 0.8rem; text-align: center; line-height: 1; font-size: 1.6rem; }
+    </style>
+
+    <div class="dialog class-signup-dialog" style="display: none;">
+        <div class="dialog-body">
+            <div class="dialog-main form">
+                <div class="form-title">请填写报名信息</div>
+                <div class="form-item bd-b">
+                    <label>姓名</label>
+                    <input class="input-time" type="datetime" value="" />
+                </div>
+                <div class="form-item bd-b">
+                    <label>电话</label>
+                    <input class="input-time" type="datetime" value="" />
+                </div>
+                <div class="form-item bd-b">
+                    <label>QQ</label>
+                    <input class="input-time" type="datetime" value="2016-06-01 16:00" />
+                </div>
+                <div class="form-item bd-b">
+                    <label>开始时间</label>
+                    <input class="input-time" type="datetime" value="2016-06-01 16:00" />
+                </div>
+                <div class="form-item">
+                    <span class="radio" data-init-control="initCheckbox">关注<span class="fc-green">微课帮</span>直播号<input type="hidden" value="" /></span>
+                </div>
+            </div>
+            <div class="dialog-ft flex-row">
+                <div class="btn btn-normal btn-cancel">取消</div>
+                <div class="btn btn-sure">确定</div>
+            </div>
+        </div>
+    </div>
+
+
+<!--
+    <style>
+        .set-classdesc-dialog .input-desc { display: block; width: 100%; height: 12.1rem; padding: 0.8rem; resize: none; border-radius: 1rem; border: 1px solid #e6e6e6; }
+        .set-classdesc-dialog .input-desc:focus { border-color: #59b574; }
+
+    </style>
+
+    <div class="dialog set-classdesc-dialog">
+        <div class="dialog-body">
+            <div class="dialog-main">
+                <textarea class="input-desc" placeholder="课程简介"></textarea>
+            </div>
+            <div class="dialog-ft flex-row">
+                <div class="btn btn-sure">确定</div>
+            </div>
+        </div>
+    </div>
+
+-->
+
+    <!--<div class="dialog shareclass-dialog" style="display: none;">-->
+        <!--<div class="dialog-body">-->
+            <!--<div class="dialog-main">-->
+                <!--<p>1、点击微信右上角<i class="iconfont icon-wxmenu fc-green"></i></p>-->
+                <!--<p class="mg-t-s">2、选择 <i class="iconfont icon-wxshare fc-green"></i> 或 <i class="iconfont icon-wxtimeline fc-green"></i> 分享好友</p>-->
+            <!--</div>-->
+            <!--<div class="dialog-ft flex-col">-->
+                <!--<div class="btn btn-normal">生成二维码邀请卡</div>-->
+                <!--<div class="btn">确定</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <script src="Scripts/jquery-1.12.3.js"></script>
+    <script src="Scripts/default.js"></script>
+    <script src="Scripts/controls.js"></script>
+    <script>
+
+/*
+        var setClassPriceDialog = dialog('.set-classprice-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+                    var price = $this.find('.input-price').val();
+                    if(typeof price ==='number' && price >0) {
+                        alert(price);
+                    }
+                    else{
+                        sTips.show('请输入正确的金额');
+                    }
+                });
+
+            }
+        });
+        setClassPriceDialog.show();
+*/
+/*
+        var setClassTimeDialog = dialog('.set-classtime-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+
+                });
+
+            }
+        });
+        setClassTimeDialog.show();
+*/
+        var classSignUpDialog = dialog('.class-signup-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+
+                });
+
+            }
+        });
+        classSignUpDialog.show();
+
+
+/*
+        var setClassDescDialog = dialog('.set-classdesc-dialog',{
+            init:function() {
+                var $this = $(this.dom);
+                $this.find('.btn-sure').click(function(){
+                    var desc = $this.find('.input-desc').val();
+                    if(desc==='') {
+                        sTips.show('请输入课程简介');
+                    }
+                    else {
+                        alert(desc);
+                    }
+
+                });
+            }
+        });
+        setClassDescDialog.show();
+
+*/
+
+//        var shareClassDialog = dialog('.shareclass-dialog', {
+//            init:function() {
+//
+//            }
+//        });
+//        shareClassDialog.show();
+
+
+    </script>
+</body>
+</html>

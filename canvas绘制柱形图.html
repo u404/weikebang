@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link href="Content/iconfont/iconfont.css" rel="stylesheet"/>
+    <link href="Content/default.css" rel="stylesheet"/>
+    <style>
+        .map {
+            display: block;
+            background: #a0e75a;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="map map1"></div>
+<div class="map map2"></div>
+<div class="map map3"></div>
+<script>
+
+    var getUnitPx = function (mediaDom) {
+        var fontSize = document.defaultView.getComputedStyle(mediaDom, null).fontSize.replace('px', '');
+        return fontSize / 10;
+    };
+
+    var drawWaveMap = function (dom, points, maxPointValue, unitPx) {
+        maxPointValue = maxPointValue || 1000;
+        unitPx = unitPx || 1;
+        var pointsCount = points.length,
+                lineWidth = 1 * 10,
+                lineSpace = 0.5 * 10,
+                width = pointsCount * (lineWidth + lineSpace) + lineWidth,
+                height = 30 * 10;
+
+        var canvas = null;
+        for (var i = 0, node; node = dom.childNodes[i]; i++) {
+            if (node.tagName === 'CANVAS') {
+                canvas = node;
+                break;
+            }
+        }
+        if (!canvas) {
+            canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            canvas.style.height = (height / 10 * unitPx) + 'px';
+            canvas.style.display = 'block';
+            dom.appendChild(canvas);
+        }
+        var ctx = canvas.getContext('2d');
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+        ctx.fillStyle = '#fff';
+        ctx.lineWidth = lineWidth;
+        var drawLine = function (x, len) {
+            ctx.beginPath();
+            ctx.translate(0.5, 0); //修正1像素线条出现不正常的问题
+            ctx.moveTo(x, (height - len) / 2);
+            ctx.lineTo(x, (height + len) / 2);
+            ctx.stroke();
+            ctx.translate(-0.5, 0); //绘制完成后，还原修正偏移
+            ctx.closePath();
+        };
+
+        for (var i = 0, point; point = points[i]; i++) {
+            drawLine(i * (lineWidth + lineSpace) + lineWidth, (point / maxPointValue) * height);
+        }
+    };
+
+    drawWaveMap(document.querySelector('.map'), [10, 20, 30, 100, 200, 300, 500, 1000, 10, 20, 30, 100, 200, 300, 500, 1000, 10, 20, 30, 100, 200, 300, 500, 1000], 1000);
+    drawWaveMap(document.querySelector('.map2'),
+            [564, 965, 564, 165, 163,
+                987, 156, 635, 456, 756,
+                143, 132, 158, 465, 466,
+                213, 546, 214, 136, 246,
+                967, 661, 852, 896, 741,
+                823, 952, 753, 185, 169,
+                354, 258, 375, 148, 053,
+                365, 149, 086, 275, 999,
+                845, 031, 643, 130, 100,
+                120, 101],
+            1000, getUnitPx(document.documentElement));
+
+    drawWaveMap(document.querySelector('.map3'),
+        [309,538,512,582,555,451,519,602,562,564,609,590,571,568,531,515,533,545,549,533,527,571,596],
+        1000, getUnitPx(document.documentElement));
+</script>
+</body>
+</html>

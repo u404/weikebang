@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button id="btn1">点击我</button>
+    <script>
+        var listenBtn1 = function(callback){
+            document.querySelector('#btn1').addEventListener('click',function(){
+                callback();
+
+            });
+        };
+
+//        var Watch = function() {
+//            var callbacks = [],
+//                    args,
+//                    self = {
+//                        add: function (callback) {
+//                            if (args) {
+//                                callback(args);
+//                            }
+//                            else {
+//                                callbacks.push(callback);
+//                            }
+//                            return this;
+//                        },
+//                        exec: function () {
+//                            args = arguments;
+//                            for (var i = 0, len = callbacks.length; i < len; i++) {
+//                                var callback = callbacks.shift();
+//                                callback(args);
+//                            }
+//                        }
+//                    };
+//            return self;
+//        };
+
+
+//        var test = function(){
+//            var watch = Watch();
+//            listenBtn1(function(){
+//                watch.exec();
+//            });
+//            return watch;
+//        };
+//
+//        test().add(function(){
+//            alert('发布订阅模式 - 监听到按钮点击事件');
+//        });
+
+
+        var Watch = function(func) {
+            var callbacks = [],
+                    args,
+                    add= function (callback) {
+                        if (args) {
+                            callback(args);
+                        }
+                        else {
+                            callbacks.push(callback);
+                        }
+                        return this;
+                    },
+                    then = function(func){
+                        return Watch(function(exec){
+
+                            add(function (arguments){
+
+                                var res = func(arguments);
+
+                                if(res === undefined){
+                                    exec(arguments);
+                                }
+                                else if(res && typeof res.then === 'function'){
+                                    res.then(function(arguments){
+
+                                        return exec(arguments);
+
+                                    });
+                                }
+                                else{
+                                    exec(arguments);
+                                }
+
+
+                            });
+
+
+                        });
+
+                    },
+                    exec= function () {
+                        args = arguments;
+                        for (var i = 0, len = callbacks.length; i < len; i++) {
+                            var callback = callbacks.shift();
+                            callback(args);
+                        }
+                    };
+
+            func(exec);
+            return {then: then};
+        };
+
+
+
+    </script>
+</body>
+</html>
